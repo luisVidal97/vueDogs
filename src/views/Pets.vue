@@ -1,17 +1,8 @@
 <template>
   <v-container grid-list-md fluid>
       <v-row>
-          <v-col>
-              <v-card>
-                  <v-img src="https://goo.gl/6CQNDo"></v-img>
-                    <v-card-title>
-                        <div>
-                            <h3>
-                                Looking for a dog?
-                            </h3>
-                        </div>
-                    </v-card-title>   
-              </v-card>
+          <v-col xs="12" md="3" sm="4" v-for=" pet in dogs" :key="pet.breed">
+              <app-dog :dog="pet"></app-dog>
           </v-col>
       </v-row>
 
@@ -19,8 +10,18 @@
 </template>
 
 <script>
-export default {
+import { Dogs }  from '../config/dog';
+import  Dog  from '../components/Dog';
 
+export default {
+    components:{
+        appDog: Dog
+    },
+    data(){
+        return{
+            dogs: Dogs
+        }
+    }
 }
 </script>
 

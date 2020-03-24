@@ -3,6 +3,12 @@
     <main :class="{'orange-green' :themeSwitched}">
       <div class="app-container">
         <header class="app-header dark-brown">
+          <v-toolbar>
+            <v-toolbar-items>
+              <v-btn to='/' text>Home</v-btn>
+              <v-btn to='/Pets' text>Pets</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
           <h1>My Pet Store</h1>
           <v-btn @click="themeSwitched= !themeSwitched">Switch theme</v-btn>
         </header>
